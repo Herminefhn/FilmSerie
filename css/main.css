@@ -1,0 +1,441 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: #222C30;
+}
+
+/* Main Container */
+main {
+    max-width: 900px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    
+}
+
+#rating {
+    width: 185px; /* Adjust as needed */
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+
+#search-results {
+    color: #e0e0e0;
+}
+
+
+/* Headings */
+h1, h3 {
+    color: white;
+    text-align: center;
+}
+
+/* Form Styling */
+#search-section, #add-section {
+    margin: 20px;
+    color: white;
+}
+
+input, button {
+    margin: 5px;
+    padding: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.form-group input {
+    width: 97%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #405C99;
+    outline: none;
+}
+
+/* Buttons */
+.signUpBox {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signUpBox button {
+    padding: 12px 20px;
+    background-color: #405C99;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.signUpBox button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Movie List Container */
+#movie-list {
+    width: 50%;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Movie List Styling */
+.movie-container {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+}
+
+
+/* Styling for movie cards */
+.movie-card {
+    width: 250px; /* Fixed width for movie cards */
+    margin-bottom: 30px; /* Space between rows */
+    flex-grow: 0; /* Prevent card from growing */
+    display: flex; /* Flex layout for the internal content */
+    flex-direction: column; /* Stack content vertically inside the card */
+    align-items: center; /* Center items horizontally */
+    border: 1px solid #445760;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: #42555D;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding and border are within the width */
+}
+
+
+.movie-card h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.movie-card p {
+    font-size: 0.9em;
+    color: white;
+    margin: 4px 0;
+}
+
+.movie-card .image-container {
+    margin-top: 20px;
+    width: 150px;
+    height: 200px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Center container for movies */
+#movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the items */
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.edit-icon, .delete-icon {
+    cursor: pointer;
+    font-size: 1.5em;
+    margin: 5px 0;
+    transition: color 0.2s;
+}
+
+.edit-icon {
+    color: #007bff;
+}
+
+.edit-icon:hover {
+    color: #0056b3;
+}
+
+.delete-icon {
+    color: #dc3545;
+}
+
+.delete-icon:hover {
+    color: #b02a2a;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .movie-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .movie-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-group input {
+        padding: 10px;
+    }
+    
+    .signUpBox button {
+        width: 100%;
+    }
+}
+
+
+
+/* Style for Edit and Delete buttons */
+.movie-card button {
+    background-color: #405C99; /* Green for Edit */
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.movie-card button:hover {
+    background-color: #3C568F; /* Slightly darker green on hover */
+}
+
+.movie-card button:active {
+    background-color: #3A538A; /* Darker green on button press */
+}
+
+.movie-card button.delete {
+    background-color: #f44336; /* Red for Delete */
+}
+
+.movie-card button.delete:hover {
+    background-color: #e53935; /* Slightly darker red on hover */
+}
+
+.movie-card button.delete:active {
+    background-color: #d32f2f; /* Darker red on button press */
+}
+
+
+
+#load-more-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#load-more-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: black;
+}
+
+
+/* Modal Styles */
+#editModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with transparency */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    max-width: 100%;
+  }
+  .close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+
+  /* Style for the container holding the login/register links */
+#logged-out-links {
+    position: fixed;   /* Fixes it to the screen (not scrolling) */
+    top: 10px;         /* 10px from the top */
+    right: 10px;       /* 10px from the right */
+    font-size: 16px;   /* Adjust font size if needed */
+}
+
+#logged-out-links a {
+    margin-left: 10px; /* Adds space between the links */
+    text-decoration: none; /* Remove underline from links */
+    color: white;        /* Set color (you can change this) */
+}
+
+#logged-out-links a:hover {
+    color: #007bff;  /* Change color on hover */
+}
+
+#logged-in-links {
+    position: fixed;   /* Fixes it to the screen (not scrolling) */
+    top: 10px;         /* 10px from the top */
+    right: 10px;       /* 10px from the right */
+    font-size: 16px;   /* Adjust font size if needed */
+}
+
+#logged-in-links a {
+    margin-left: 10px; /* Adds space between the links */
+    text-decoration: none; /* Remove underline from links */
+    color: #000;        /* Set color (you can change this) */
+}
+
+#logged-in-links a:hover {
+    color: #007bff;  /* Change color on hover */
+}
+
+.separator {
+    color: rgb(255, 255, 255); /* Change the color of the separator */
+    margin: 0 5px; /* Optional: Adjust the spacing around the separator */
+}
+
+#logged-out-links {
+    display: flex; /* Use flexbox for horizontal layout */
+    align-items: center; /* Center items vertically */
+}
+
+#logged-out-links a, #logout-button {
+    color: white; /* Text color for links and button */
+    text-decoration: none; /* Remove underline for links */
+    margin-right: 5px; /* Add space between the elements */
+}
+
+#logged-out-links a:hover, #logout-button:hover {
+    color: #ff5733; /* Change color on hover */
+}
+
+/* If you want the logout button to look like a link */
+#logout-button {
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Adjust font size */
+}
+
+#logout-button:focus {
+    outline: none; /* Remove focus outline */
+}
+
+#welcome-message {
+    color: white;
+}
+
+#logout-btn {
+    color: white;
+}

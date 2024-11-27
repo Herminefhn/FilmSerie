@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Filmdatabase</title>
+</head>
+
+<body>
+
+    <main>
+        
+        <h1>Min filmdatabase</h1>
+
+        <div class="login-container">
+            <h3>Logg inn</h3>
+            <div>
+                <label>Epost:</label><br>
+                <input id="email" type="email">
+            </div>
+            <div>
+                <label>Passord:</label><br>
+                <input id="password" type="password">
+            </div>
+
+            <div class="signUpBox">
+                <button id="btnCreate" onclick="login()">Logg inn</button>
+            </div>
+
+            <div id="info">
+                <p>Dersom du ikke har bruker, <a href="register.html">opprett en her</a></p>
+            </div>
+        </div>
+    </main>
+
+    
+
+
+    <!-- Må hente inn eksterne rammeverk/bibliotek for å kunne laste inn js frå anna fil-->
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
+
+    <script src="js/register.js"></script>
+</body>
+
+</html>

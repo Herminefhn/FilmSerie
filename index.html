@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film-Serie register</title>
+  <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+
+  <h1 class="Overskrift">Film-Serie register</h1>
+
+  <div id="logged-out-links">
+    <a href="login.html">Logg inn</a> | 
+    <a href="register.html">Register</a>
+ </div>
+ 
+ <!-- Displayed when the user is logged in -->
+ <div id="logged-in-links" style="display: none;">
+    <span id="welcome-message"></span> | 
+    <a href="javascript:void(0)" id="logout-btn">Logg ut</a>
+ </div>
+ 
+
+
+  <div id="search-section">
+    <input type="text" id="search-input" placeholder="Søk etter film eller serie...">
+    <button onclick="searchTMDB()">Søk</button>
+  </div>
+
+  <div id="search-results"></div>
+
+  <div id="add-section">
+    <h2>Legg til Film/Serie</h2>
+    <input type="text" id="title" placeholder="Tittel">
+    <input type="text" id="genre" placeholder="Sjanger">
+    <input type="text" id="image" placeholder="Bilde URL">
+    <input type="number" id="year" placeholder="Utgivelsesår">
+    <input type="text" id="director" placeholder="Regissør">
+    <input type="number" id="rating" placeholder="Vurdering (1-10)" min="0" max="10">
+    <button onclick="addItem()">Legg til</button>
+  </div>
+
+  <div id="movie-list">
+    <h2>Liste over Filmer/Serier</h2>
+    <div id="movies"></div>
+  </div>
+
+  <!-- Search Results Container -->
+  <div id="search-results"></div>
+
+  <!-- Load More Button -->
+  <button id="load-more-btn" style="display:none;" onclick="loadMoreResults()">Load More</button>
+
+
+
+  <!-- Edit Modal (Popup) -->
+  <div id="editModal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeEditModal()">&times;</span>
+      <h2>Edit Movie</h2>
+      <form id="edit-form">
+        <label for="inptitle">Title</label>
+        <input type="text" id="inptitle" required>
+
+        <label for="inpgenre">Genre</label>
+        <input type="text" id="inpgenre" required>
+
+        <label for="inpimage">Image URL</label>
+        <input type="text" id="inpimage" required>
+
+        <label for="inpyear">Year</label>
+        <input type="text" id="inpyear" required>
+
+        <label for="inpdirector">Director</label>
+        <input type="text" id="inpdirector" required>
+
+        <label for="inprating">Rating</label>
+        <input type="number" id="inprating" min="1" max="10" step="0.1" required>
+
+        <button type="button" onclick="saveEditedMovie()">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Displayed when the user is logged in -->
+<div id="logged-in-links" style="display: none;">
+  <span id="welcome-message"></span> | 
+  <a href="javascript:void(0)" id="logout-btn">Logg ut</a>
+</div>
+
+  
+
+  <!-- Edit Modal (Popup) 
+<div id="editModal" class="modal" style="display:none;">
+  <div class="modal-content">
+      <span class="close-btn" onclick="closeEditModal()">&times;</span>
+      <h2>Edit Movie</h2>
+      <form id="edit-form">
+          <div class="form-group">
+              <label for="inptitle">Title</label>
+              <input type="text" id="inptitle" required>
+          </div>
+
+          <div class="form-group">
+              <label for="inpgenre">Genre</label>
+              <input type="text" id="inpgenre" required>
+          </div>
+
+          <div class="form-group">
+              <label for="inpimage">Image URL</label>
+              <input type="text" id="inpimage" required>
+          </div>
+
+          <div class="form-group">
+              <label for="inpyear">Year</label>
+              <input type="text" id="inpyear" required>
+          </div>
+
+          <div class="form-group">
+              <label for="inpdirector">Director</label>
+              <input type="text" id="inpdirector" required>
+          </div>
+
+          <div class="form-group">
+              <label for="inprating">Rating</label>
+              <input type="number" id="inprating" min="1" max="10" step="0.1" required>
+          </div>
+
+          <button type="button" onclick="saveEditedMovie()">Save Changes</button>
+      </form>
+  </div>
+</div>
+-->
+
+
+<script src="https://www.gstatic.com/firebasejs/9.x/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
+
+
+  <script src="js/main.js"></script>
+  
+</body>
+
+</html>
